@@ -1,23 +1,23 @@
 init python:
 
-    def character_dragged(drags, drop):
-        global currentCharacter, lastGivenItem
-
-        if not drop:
-            return False
-
-        item = drags[0].drag_name
-        character = drop.drag_name
-        
-        if character in characters and item in self.items and item["disponível"]:
-            lastGivenItem = item
-
-            character_expression(character, item)
-
-            self.items(item).disponível = False
-            return True
-
-        return False
+#    def character_dragged(drags, drop):
+#        global currentCharacter, lastGivenItem
+#
+#        if not drop:
+#            return False
+#
+#        item = drags[0].drag_name
+#        character = drop.drag_name
+#        
+#        if character in characters and item in self.items and item["disponível"]:
+#            lastGivenItem = item
+#
+#            character_expression(character, item)
+#
+#            self.items(item).disponível = False
+#            return True
+#
+#        return False
 
     # Classe de inventário do jogador   
 
@@ -44,16 +44,16 @@ init python:
                 for item in self.items:
                     a(f"{item.name}. {item.description}.")
 
-        # Verifica se há itens no inventário
-        def are_items_available(self):
-            return any(item["disponível"] for item in self.items)
-
-        # seleciona o primeiro item disponível no inventário como padrão
-        def select_default_item(self):
-            for item in self.items:
-                if item["disponível"]:
-                    return item.name, item.description
-            return None, None
+#        # Verifica se há itens no inventário
+#        def are_items_available(self):
+#            return any(item["disponível"] for item in self.items)
+#
+#        # seleciona o primeiro item disponível no inventário como padrão
+#        def select_default_item(self):
+#            for item in self.items:
+#                if item["disponível"]:
+#                    return item.name, item.description
+#            return None, None
         
 
     class ItemInventario():
