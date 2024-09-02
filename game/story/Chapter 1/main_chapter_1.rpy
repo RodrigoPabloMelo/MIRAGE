@@ -16,5 +16,25 @@ label chapter_1:
     with dissolve
 
     a "Este é o corredor do cruzeiro. Atual culpado ainda é [culpado]."
-  
+
+    scene quarto_suite
+    with dissolve
+
+    a """
+    Esta é a suíte
+
+    Esta é um pouco esquisita...
+
+    No entanto... 
+    """
+    extend "O atual culpado ainda é [culpado]."
+
+    a "Opa! "
+    extend "Parerece que tem algo aqui."
+    a "Vou pegar isso."
+
+    $ inventario.add_item(carta_marine)
+
+    centered "Você pegou uma carta"
+
     
