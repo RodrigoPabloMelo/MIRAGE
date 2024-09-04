@@ -64,9 +64,62 @@ label start:
     a "{i}Entrega?{/i} "
     extend "{i}Essa hora?{/i}"
 
-    a "Ah... "
-    extend "é... "
-    extend "Obrigada."
-    a "Quem enviou?"
+    menu resposta_entregador:
+        "Obrigada?":
+            a "Ah... "
+            extend "é... "
+            extend "Obrigada."
+            quem "De nada, senhorita. Tenha um bom dia!"
+            pass
+        "Quem enviou?":
+            a "Quem me enviou isto?"
+            pass
+    
+    """
+    O entregador apenas sorri e se retira.
 
-    "O entregador apenas sorri e se retira."
+    Anna fecha a porta e se retira.
+
+    Com o envelope em mãos, um selo dourado ostenta o símbolo de uma {b}bússola estilizada{/b}.
+    """
+
+    a "Hm... "
+    extend "certo."
+
+    "Ela rasga cuidadosamente o envelope... "
+    extend "é uma carta."
+    "Impresso em papel de alta qualidade."
+
+    window hide
+    nvl show
+    nvl_nar """
+    Olá Anna!
+    Você deseja fazer parte da história?
+
+    Você está convidada para o primeiro cruzeiro transatlântico de luxo do mundo.
+
+    Acomode-se, relaxe e embarque nessa viagem com tudo incluso no pacote completo
+    para tirar o melhor proveito da experiência!
+
+    Responda a esta carta até o dia 11/07,
+    nos enviando uma confirmação da sua presença.
+    Contamos com você!
+
+    Ass. {b}ATLAS Tour{/b}
+    """
+    nvl clear
+    nvl hide
+    $ inventario.add_item(carta_convite)
+    show text "{i}Inventário Atualizado: Carta de Convite da ATLAS Tour{/i}"
+    hide text with dissolve
+    window show
+
+    menu primeira_acao:
+        "Ligar para o editor.":
+            call ligar_editor
+            $ ligou_editor == True
+        "Investigar mais sobre a ATLAS Tour.":
+            call investigar_atlas
+            $ investigou_atlas == True
+
+return

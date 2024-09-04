@@ -11,6 +11,13 @@ label chapter_1:
 
 
     a "Este é o Hall Principal do Cruzeiro. Atual culpado é [culpado]."
+    
+    if culpado == t:
+        t "Eu sou o culpado."
+    elif culpado == p:
+        p "Eu sou o culpado."
+    else:
+        a "Quem será?."
 
     scene corredor
     with dissolve
