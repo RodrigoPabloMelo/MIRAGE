@@ -1,0 +1,6 @@
+#ignorando arquivos e pastas indesejadas
+.txt
+/.vscode
+game/saves
+game/cache
+
