@@ -1,77 +1,25 @@
-﻿# Personagens: detém informações sobre os personagens do jogo, incluindo preferências, relacionamentos e informações sobre o personagem.
-default Characters = {
-    "Leo": {
-        "neutro": "images/characters/leo_neutro.png",
-        "feliz": "images/characters/leo_feliz.png",
-        "preferencias": ["chave_quarto", "sketchbook", "pelucia_coelho",],
-        "expression": "neutro",
-    },
-    "Marine": {
-        "neutro": "images/characters/marine_neutro.png",
-        "feliz": "images/characters/marine_feliz.png",
-        "preferencias": ["carta_alex", "diadema_coroa", "foto_gato_marine",],
-        "expression": "neutro",
-    },
-    "Patrícia": {
-        "neutro": "images/characters/patricia_neutro.png",
-        "feliz": "images/characters/patricia_feliz.png",
-        "preferencias": ["carta_marine", "revista_moda", "caneta_dourado",],
-        "expression": "neutro",
-    },
-}
+﻿init python:
+    import renpy.store as store
+    import renpy.exports as renpy
 
-default currentCharacter = "Leo"
-default lastGivenItem = None
+    class Quest (store.object):
+        def __init__(self, name, description, available = False, started = False, completed = False):
+            self.name = name
+            self.description = description
+            self.available = available
+            self.started = started
+            self.completed = completed
 
-default selected_info = ""
-default selected_item = ""
+    class QuestList (store.object):
+        def __init__(self):
+            self.quest_list = []
 
-# Lógica do jogo
+        def add_quest(self, quest):
+            self.quest_list.append(quest)
 
-# tela para o personagem principal da interação, mostrando os itens disponíveis
-screen interact_with_characters():
-    zorder 1
-    add "images/scenarios/main_hall.png"
+        def remove_quest(self, quest):
+            self.quest_list.remove(quest)
 
-    if len(self.items) < 1:
-        vbox:
-            label "Não tenho nada comigo no momento..."
-            textbutton "Voltar" action Return()
-    else:
-        frame:
-            xalign 0.0
-            yalign 0.0
-            xsize 400
-            ysize 600
+default my_quests = QuestList()
 
-            vpgrid:
-                cols 2
-                spacing 10
-                draggable False
-                mousewheel True
-
-                scrollbars "vertical"
-                xalign 0.5
-
-                vbox:
-                    for item in self.items:
-                        if item_info["disponível"]:
-                            textbutton (f"{item.name} - {item.description}.") action [SetVariable("selectd_item", item), SetVariable("selected_info", item.description)]
-                        else:
-                            text "??? - ???"
-        
-        if selected_item:
-            draggroup:
-                drag:
-                    drag_name selected_item
-                    droppable False
-                    dragged character_dragged
-                    xalign 0.1
-                    yalign 0.8
-
-                drag:
-                    drag_name currentCharacter
-                    draggable False
-                    xalign 0.5
-                    yalign 1.0
-                    image Characters[currentCharacter][Characters[currentCharacter]["expression"]]
+default quest.atlas_tour_computador = Quest("ATLAS Tour", "Pesquisar sobre a ATLAS Tour")
