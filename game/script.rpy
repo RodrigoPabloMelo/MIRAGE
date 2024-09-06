@@ -22,4 +22,4 @@
 
 default my_quests = QuestList()
 
-default quest.atlas_tour_computador = Quest("ATLAS Tour", "Pesquisar sobre a ATLAS Tour")
+default atlas_tour_computador = Quest("ATLAS Tour", "Pesquisar sobre a ATLAS Tour")
