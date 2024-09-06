@@ -1,49 +1,107 @@
 label chapter_1:
-    
-    ## Chamar essa função tá dando errado
-    # $ selected_item, selected_info = inventario.select_default_item()
-    $ item_given = False
-
     show screen hud
     scene main_hall
     with Fade(2.0, 1.0, 2.0)
+
+    show text "Hall Principal do Cruzeiro, 11 de setembro, 15:50 AM" with dissolve
+    with Pause(2)
+
+    hide text with dissolve
+
     window show
     with dissolve
 
+    s "Boa noite, senhora. Posso ver o seu convite, por favor?"
 
+    a "Claro. Sou Anna, repórter da Revista {b}Timez{/b} Fui convidada para cobrir a inauguração."
 
-    a "Este é o Hall Principal do Cruzeiro. Atual culpado é [culpado]."
-    
-    if culpado == t:
-        t "Eu sou o culpado."
-    elif culpado == p:
-        p "Eu sou o culpado."
-    else:
-        a "Quem será?."
+    "Anna entrega o convite para o segurança."
+    "O segurança dá uma olhada no convite e depois rapidamente para Anna."
+    "Ele parece um pouco mais atento agora..."
 
-    scene corredor
-    with dissolve
+    s "\'Repórter\', é? Não vejo muitos {i}desse tipo{/i} por aqui... " 
+    extend "Quem a convidou?"
 
-    a "Este é o corredor do cruzeiro. Atual culpado ainda é [culpado]."
+    menu segurança_atlas_inauguracao:
+        "Miguel Duvall" if [investigou_atlas == True]:
+            $ segurança_confia = True
+            a """
+            Recebi o convite diretamente de {b}Miguel Duval{/b}. 
+                
+            Achei que uma repórter com o meu perfil poderia captar algo além da festa...
+                
+            Talvez explorar o lado mais humano por trás desse empreendimento.
 
-    scene quarto_suite
-    with dissolve
+            {i}Bem que estão precisando...{/i}
+            """
 
-    a """
-    Esta é a suíte
+            "O segurança parece satisfeito com a resposta de Anna."
+            "Ele relaxa levemente ao ouvir o nome de Miguel"
 
-    Esta é um pouco esquisita...
+            s "Ah, entendi."
+            s "Se veio a pedido do senhor Duval, é bem-vinda."
 
-    No entanto... 
-    """
-    extend "O atual culpado ainda é [culpado]."
+            "Ele devolve o convite e inclina a cabeça com um gesto cordial."
 
-    a "Opa! "
-    extend "Parerece que tem algo aqui."
-    a "Vou pegar isso."
+            s "Se precisar de algo, sinta-se à vontade para perguntar."
+            s "Mas, um aviso: {i}algumas pessoas aqui não gostam muito de perguntas...{/i}"
 
-    $ inventario.add_item(carta_marine)
+            a "É... "
+            extend "Entendi."
+            a "Obrigada pelo aviso."
+            a "Vou ter cuidado."
 
-    centered "Você pegou uma carta"
+            s "Aproveite a festa, senhora."
 
+            jump sala_festa
+
+        "Não lembro o nome":
+            $ segurança_confia = False
+            a "Foi um convite pessoal, mas não lembro o nome do convidado."
+
+            "O segurança parece desconfiado."
+            "Ele olha para o convite novamente e depois para Anna."
+
+            s "Hmm... "
+            extend "Não lembra o nome do seu convidado?"
+
+            a "Não... "
+            a "Foi um convite pessoal, mas não lembro o nome."
+
+            "O segurança parece ainda mais desconfiado."
+            "Ele olha para Anna com um olhar penetrante."
+
+            s "Bem... "
+            extend "Vou ter que pedir que me acompanhe até a sala de segurança."
+
+            "O segurança faz um gesto para um colega e se aproxima de Anna."
+
+            s "Por favor, me acompanhe."
+
+            "Anna é levada para a sala de segurança."
+
+            jump sala_segurança
+            
+        "ATLAS Tour":
+            $ segurança_confia = True
+            a """
+            Fui convidada pela {b}ATLAS Tour{/b}.
+
+            Achei que uma repórter com o meu perfil poderia captar algo além da festa...
+                
+            Talvez explorar o lado mais humano por trás desse empreendimento.
+
+            {i}Bem que estão precisando...{/i}
+            """
+
+            "O segurança apenas acena."
+
+            s "Ah, entendi."
+            s "Seja bem-vinda Senhorita."
+
+            "Ele devolve o convite e apenas deixa Anna passar."
+
+            jump sala_festa
+
+    return
     

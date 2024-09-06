@@ -1,0 +1,1 @@
+label sala_segurança:

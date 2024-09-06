@@ -38,9 +38,11 @@ label start:
 
     Em sua mesa, ela se sente estagnada...
     """
+
+    show a at center with dissolve
     a "Que artigo infernal! Eu não consigo escrever nada!"
 
-    a "Preciso de uma pausa."
+    a "Que desastre..."
 
     """
     \"Pessoas desabrigadas, expulsas de suas casas para a construção de hotéis de luxo\", a matéria dizia.
@@ -48,8 +50,8 @@ label start:
     \"O governo prometeu investigar o caso, mas até agora nada foi feito.\"
     """
 
-    a "Eu preciso de um café. "
-    extend "Não... "
+    a "Eu preciso de um café... "
+    extend "não... "
     extend "dois cafés."
 
     "*{i}Bling blong{/i}*" 
@@ -95,7 +97,7 @@ label start:
 
     Anna fecha a porta e se retira.
 
-    Com o envelope em mãos, um selo dourado ostenta o símbolo de uma {b}bússola estilizada{/b}.
+    Com o envelope em mãos, um selo dourado ostenta o símbolo de um {b}barco estilizado{/b}.
     """
 
     scene anna_quarto
@@ -112,6 +114,7 @@ label start:
     nvl show
     nvl_nar """
     Olá Anna!
+
     Você deseja fazer parte da história?
 
     Você está convidada para o primeiro cruzeiro transatlântico de luxo do mundo.
@@ -142,31 +145,113 @@ label start:
     menu primeira_acao:
         "Ligar para o editor.":
             call ligar_editor
+            pass
 
         "Investigar mais sobre a ATLAS Tour.":
             call investigar_atlas
     
-    a "Hm..."
-    a "Parece que vai ser uma viajem interessante."
+    if [investigou_atlas == True]:
+        a "Eu preciso de mais informações."
+        "Uma ligação interrompe Anna."
+
+        show a at center with vpunch
+        chefe "Anna! "
+        extend "Está atrasadíssima!"
+
+        "Dava pra ouvir o chefe de Anna gritando do outro lado do apartamento."
+
+        a "É... "
+        a "CHEFE!?"
+
+        "Anna olha o relógio: 10:50... "
+        extend "Ela está {b}MUITO{/b} ferrada..."
+
+    else:
+        a "É... "
+        a "Vai ser uma viagem interessante."
+
     jump chapter_1
     return
-    
+
+# Anna investiga a ATLAS Tour ####################################################################
 label investigar_atlas:
+    $ atlas_tour_computador.available = True
     "Anna vai até o computador e pesquisa:"
-    $ quest.atlas_tour_computador.available == True
     menu atlas_computador:
-        "[quest.atlas_tour_computador.name]" if not(quest.atlas_tour_computador.completed) and quest.atlas_tour_computador.available:
+        "[atlas_tour_computador.name]" if atlas_tour_computador.available and not(atlas_tour_computador.completed):
             $ investigou_atlas == True
             a "Certo... "
 
-            # call screen tela_pesquisa_atlas
+            "Anna encontra algumas informações sobre a empresa..."
+            
+            a "ATLAS Tour..."
+            a "aqui diz: \'{i}Nossa missão é proporcionar experiências únicas, levando nossos passageiros a destinos extraordinários com um nível de luxo e conforto incomparáveis.{/i}\'"
 
-            pass
+            a "Hm... "
+            extend "parece interessante."
+            a "Mas, isso ainda não me diz muito."
+
+            "Ela continua a pesquisar."
+
+            a "Ah, aqui está!"
+            a "O site diz que a ATLAS Tour é uma filiada."
+            a "Eles são uma empresa  especializada no ramo de luxo."
+
+            window hide
+            nvl show
+            nvl_nar """
+            A ATLAS Tour é uma empresa fundada em 2010, especializada em viagens de luxo.
+            Pela empresa já se passou nomes como Lucien Girard, antigo CEO da empresa, e recente ex-sócio do atual CEO: {b}Miguel Duvall{/b}.
+
+            Filiada da {b}ATLAS Corporation{/b}, a empresa é conhecida por ser pioneira no ramo de turismo sob as àguas.
+            a {b}ATLAS Corporation{/b} é uma empresa multinacional que atua em diversos setores, como turismo, entretenimento e outros serviços.
+
+            Apesar disso, a empresa vem sendo alvo de críticas por conta de suas práticas de negócio.
+            A fundação de mais de 400 hotéis de luxo em áreas de preservação ambiental e a expulsão de comunidades locais para a construção de resorts são algumas das acusações.
+
+            No entanto a empresa nega que tenha cometido qualquer irregularidade, dizendo ter autorização dos governos locais para a construção dos hotéis.
+            """
+            nvl clear
+            nvl hide
+            window show
+
+            a "Isso... "
+            extend "é bem esquisito."
+
+            
+
+            menu pesquisa_nome:
+                "Miguel Duvall":
+                    a "Miguel Duvall?"
+                    "\"Miguel Duvall, 30 anos, atual CEO da ATLAS Tour.\""
+                    "\"Nascido e criado em São Paulo, Duvall é conhecido pelo seu carisma, ser firme, e por ser um homem de negócios bem-sucedido.\""
+                    pass
+
+                "Lucien Girard":
+                    a "Lucien Girard?"
+                    "\"Lucien Girard, 45 anos, ex-CEO da ATLAS Tour.\""
+                    "\"Girard foi o fundador da ATLAS Tour e um dos pioneiros no ramo de turismo de luxo.\""
+                    "\"Ele deixou a empresa em 2018, após uma crise nos negócios da ATLAS Tour, a empresa guarda-chuva ATLAS Corporation resolveu desconectá-lo completamente da empresa.\""
+                    pass
+
+                "ATLAS Corporation":
+                    a "ATLAS Corporation?"
+                    "\"ATLAS Corporation, empresa multinacional que atua em diversos setores, como turismo, entretenimento e outros serviços.\""
+                    "\"Algumas das filiadas são: ATLAS Host, ATLAS Tour e Cine ATLAS.\""
+                    pass
+            
+            "Hm..."
+
         "\"Primeiro cruzeiro transatlântico de luxo do mundo\"":
             pass
         "11/07...":
             pass
+#################################################################################################
 
-
+# Anna liga para o editor #######################################################################
 label ligar_editor:
     $ ligou_editor == True
+
+
+
+#################################################################################################
