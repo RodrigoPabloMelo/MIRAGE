@@ -3,4 +3,6 @@
 /.vscode
 game/saves
 game/cache
-
+.save
+.json
+game/saves/persistent
