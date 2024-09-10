@@ -268,7 +268,7 @@ label ligar_editor:
 
     menu editor_conversa_materia:
         "Bloqueio criativo":
-            $ editor_conversa = 1
+            $ editor_acao = 1
 
             a "Então... "
             extend "sobre a matéria, estou com um pequeno bloqueio criativo."
@@ -278,17 +278,17 @@ label ligar_editor:
             e "Você sabe que eu preciso daquele artigo hoje, certo? "
             extend "Não posso adiar o prazo."
 
-            a "Eu sei..."
+            a "Eu sei... "
             extend "Mas me ouça."
             a "Isso que eu recebi pode ser uma oportunidade única."
             a "Estou falando de uma grande matéria."
 
             e "Eu espero que seja mesmo, porque sua última foi... "
-            extend "no mínimo..."
+            extend "no mínimo... "
             extend "mediana."
             pass
         "ATLAS Tour":
-            $ editor_conversa = 2
+            $ editor_acao = 2
             a "O que você sabe sobre a ATLAS Tour?"
 
             e "ATLAS Tour?"
@@ -332,7 +332,7 @@ label ligar_editor:
     a "Eles parecem querer que eu escreva uma matéria \'polida\', sem levantar questões difíceis..."
     a "Já ouvimos histórias de outras empresas fazendo isso."
 
-    e "ATLAS Tour, hein? Eles têm se metido em tudo ultimamente. Hotéis, resorts, e agora cruzeiros de luxo... Parece algo grande, sim, mas qual o ângulo? Um artigo sobre um cruzeiro de luxo? Isso vai parecer um press release disfarçado de reportagem."
+    e "{b}ATLAS Tour{/b}, hein? Eles têm se metido em tudo ultimamente. Hotéis, resorts, e agora cruzeiros de luxo... Parece algo grande, sim, mas qual o ângulo? Um artigo sobre um cruzeiro de luxo? Isso vai parecer um press release disfarçado de reportagem."
     
     a "Exatamente. E eu estou pensando que este cruzeiro pode ser a fachada perfeita para eles tentarem mudar a imagem pública. O fato de convidarem jornalistas pode ser uma tentativa de controlar a narrativa. E, se formos espertos, podemos expor algo grande."
 
@@ -340,15 +340,15 @@ label ligar_editor:
 
     menu editor_ganhar:
         "Exclusividade":
-            $ editor_ganha = exclusividade
+            $ editor_ganha = 1
             a "Exclusividade."
             pass
         "Reputação":
-            $ editor_ganha = reputação
+            $ editor_ganha = 2
             a "Reputação."
             pass
         "Visibilidade":
-            $ editor_ganha = visibilidade
+            $ editor_ganha = 3
             a "Visibilidade."
             pass
     
