@@ -145,12 +145,11 @@ label start:
     menu primeira_acao:
         "Ligar para o editor.":
             call ligar_editor
-            pass
 
         "Investigar mais sobre a ATLAS Tour.":
             call investigar_atlas
     
-    if [investigou_atlas == True]:
+    if investigou_atlas == True:
         a "Eu preciso de mais informações."
         "Uma ligação interrompe Anna."
 
@@ -170,16 +169,19 @@ label start:
         a "É... "
         a "Vai ser uma viagem interessante."
 
+
     jump chapter_1
     return
 
 # Anna investiga a ATLAS Tour ####################################################################
 label investigar_atlas:
     $ atlas_tour_computador.available = True
+
     "Anna vai até o computador e pesquisa:"
     menu atlas_computador:
         "[atlas_tour_computador.name]" if atlas_tour_computador.available and not(atlas_tour_computador.completed):
-            $ investigou_atlas == True
+            $ investigou_atlas = True
+
             a "Certo... "
 
             "Anna encontra algumas informações sobre a empresa..."
@@ -241,11 +243,12 @@ label investigar_atlas:
                     pass
             
             "Hm..."
+            return
 
         "\"Primeiro cruzeiro transatlântico de luxo do mundo\"":
-            pass
+            return
         "11/07...":
-            pass
+            return
 #################################################################################################
 
 # Anna liga para o editor #######################################################################
