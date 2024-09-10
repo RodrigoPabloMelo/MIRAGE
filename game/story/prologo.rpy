@@ -255,6 +255,112 @@ label investigar_atlas:
 label ligar_editor:
     $ ligou_editor == True
 
+    show a at center with dissolve
+    a "Eu deveria falar com o editor sobre isso... Pode ser uma grande oportunidade."
+
+    "Anna pega seu telefone e rapidamente disca o número de seu editor."
+
+    a "Espero que ele não esteja de mau humor hoje..."
+
+    "O telefone toca uma, duas vezes, antes de ser atendido."
+
+    e "Anna? Já está com a matéria pronta, certo?"
+
+    menu editor_conversa_materia:
+        "Bloqueio criativo":
+            $ editor_conversa = 1
+
+            a "Então... "
+            extend "sobre a matéria, estou com um pequeno bloqueio criativo."
+            a "Mas, eu recebi uma coisa que pode render algo muito maior."
+
+            e "Bloqueio criativo, Anna?"
+            e "Você sabe que eu preciso daquele artigo hoje, certo? "
+            extend "Não posso adiar o prazo."
+
+            a "Eu sei..."
+            extend "Mas me ouça."
+            a "Isso que eu recebi pode ser uma oportunidade única."
+            a "Estou falando de uma grande matéria."
+
+            e "Eu espero que seja mesmo, porque sua última foi... "
+            extend "no mínimo..."
+            extend "mediana."
+            pass
+        "ATLAS Tour":
+            $ editor_conversa = 2
+            a "O que você sabe sobre a ATLAS Tour?"
+
+            e "ATLAS Tour?"
+
+            a "Eu acabei de receber um convite deles."
+            a "Dizem eles que estão lançando o \"primeiro cruzeiro transatlântico de luxo do mundo\"."
+
+            e "E o que tem de tão especial nisso?"
+
+            a "Não sei... "
+            extend "Mas acho que pode ser uma grande oportunidade."
+
+            e "Hm... "
+            extend "Entendo."
+            e "E o que você pretende fazer?"
+
+            a "Eu estava pensando em..."
+            menu cobrir_investigar:
+                "Cobrir o evento":
+                    $ editor_acao = cobrir
+                    a "Eu poderia cobrir o evento."
+                    pass
+                "Investigar a empresa":
+                    $ editor_acao = investigar
+                    a "Investigar a empresa."
+                    pass
+            
+            e "Entendi."
+            e "Só lembre que precisamos de algo mais impactante para a próxima edição."
+            pass
+    
+    a "Uma coisa é certa... "
+    extend "Vai ser uma viagem interessante."
+
+    a "Mas a questão é: {b}por que me convidariam?{/b} Eu sou uma repórter independente, não sou conhecida por cobrir eventos desse tipo."
+
+    e "Hm... então você acha que há algo por trás desse convite?"
+
+    a "Isso."
+
+    a "Eles parecem querer que eu escreva uma matéria \'polida\', sem levantar questões difíceis..."
+    a "Já ouvimos histórias de outras empresas fazendo isso."
+
+    e "ATLAS Tour, hein? Eles têm se metido em tudo ultimamente. Hotéis, resorts, e agora cruzeiros de luxo... Parece algo grande, sim, mas qual o ângulo? Um artigo sobre um cruzeiro de luxo? Isso vai parecer um press release disfarçado de reportagem."
+    
+    a "Exatamente. E eu estou pensando que este cruzeiro pode ser a fachada perfeita para eles tentarem mudar a imagem pública. O fato de convidarem jornalistas pode ser uma tentativa de controlar a narrativa. E, se formos espertos, podemos expor algo grande."
+
+    e "Mas o que a gente ganha com isso?"
+
+    menu editor_ganhar:
+        "Exclusividade":
+            $ editor_ganha = exclusividade
+            a "Exclusividade."
+            pass
+        "Reputação":
+            $ editor_ganha = reputação
+            a "Reputação."
+            pass
+        "Visibilidade":
+            $ editor_ganha = visibilidade
+            a "Visibilidade."
+            pass
+    
+    e "hm... "
+    extend "A gente vai conversando."
+
+    "A ligação termina, e Anna se prepara para a próxima etapa."
+    "Anna desliga o telefone, sentindo a adrenalina correr. Ela não só conseguiu a aprovação do editor, mas também sentiu que estava prestes a descobrir algo maior do que imaginava."
+
+    return
+
+    
 
 
 #################################################################################################
