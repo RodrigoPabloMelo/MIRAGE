@@ -23,7 +23,7 @@ label chapter_1:
     extend "Quem a convidou?"
 
     menu segurança_atlas_inauguracao:
-        "Miguel Duvall" if [investigou_atlas == True]:
+        "Miguel Duvall" if investigou_atlas == True:
             $ segurança_confia = True
             a """
             Recebi o convite diretamente de {b}Miguel Duval{/b}. 
