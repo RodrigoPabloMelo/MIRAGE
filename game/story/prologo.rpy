@@ -308,11 +308,11 @@ label ligar_editor:
             a "Eu estava pensando em..."
             menu cobrir_investigar:
                 "Cobrir o evento":
-                    $ editor_acao = cobrir
+                    $ editor_acao = 1 #cobrir
                     a "Eu poderia cobrir o evento."
                     pass
                 "Investigar a empresa":
-                    $ editor_acao = investigar
+                    $ editor_acao = 2 #investigar
                     a "Investigar a empresa."
                     pass
             
