@@ -9,6 +9,8 @@ default ligou_editor = False
 default editor_ganha = list(range(0, 3))
 default editor_acao = list(range(0, 2))
 
+# horarios 0 = manha | 1 = tarde | 2 = noite
+default horario = list(range(0, 2))
 
 default investigou_atlas = False
 default segurança_confiança = False
