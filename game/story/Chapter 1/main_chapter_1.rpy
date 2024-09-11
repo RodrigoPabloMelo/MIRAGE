@@ -3,7 +3,7 @@ label chapter_1:
     scene main_hall
     with Fade(2.0, 1.0, 2.0)
 
-    show text "Hall Principal do Cruzeiro, 11 de setembro, 15:50 AM" with dissolve
+    show text "Hall Principal do Cruzeiro, 11 de setembro, 15:50" with dissolve
     with Pause(2)
 
     hide text with dissolve
@@ -57,13 +57,13 @@ label chapter_1:
 
         "Não lembro o nome":
             $ segurança_confia = False
-            a "Foi um convite pessoal, mas não lembro o nome do convidado."
+            a "Foi um convite pessoal, mas não lembro o nome de quem me convidou."
 
             "O segurança parece desconfiado."
             "Ele olha para o convite novamente e depois para Anna."
 
             s "Hmm... "
-            extend "Não lembra o nome do seu convidado?"
+            extend "Não lembra o nome que estava no convite?"
 
             a "Não... "
             a "Foi um convite pessoal, mas não lembro o nome."
