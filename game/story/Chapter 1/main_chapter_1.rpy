@@ -13,6 +13,8 @@ label chapter_1:
 
     s "Boa noite, senhora. Posso ver o seu convite, por favor?"
 
+    show a at left
+    with dissolve
     a "Claro. Sou Anna, repórter da Revista {b}Timez{/b} Fui convidada para cobrir a inauguração."
 
     "Anna entrega o convite para o segurança."
