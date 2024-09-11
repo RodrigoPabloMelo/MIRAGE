@@ -2,7 +2,7 @@
 define nvl_nar = Character(None, kind=nvl, what_color = "#ffffff")
 
 define a = Character("Anna", color="#f2c94c", image="a" ,what_prefix='"', what_suffix='"',  who_outlines=[(absolute(2), "#352f36", absolute(1), absolute(1))])
-image a = "anna_neutro"
+image a = "anna_neutral"
 image a feliz = "anna_feliz"
 image a triste = "anna_triste"
 image a brava = "anna_brava"
