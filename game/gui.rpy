@@ -57,7 +57,7 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "Windows Regular.ttf"
+define gui.text_font = "SF-Pro-Text-Medium.otf"
 
 ## The font used for character names.
 define gui.name_text_font = "Crang.ttf"
@@ -209,8 +209,8 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = '#414141'
+define gui.choice_button_text_hover_color = "#999999"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
 
