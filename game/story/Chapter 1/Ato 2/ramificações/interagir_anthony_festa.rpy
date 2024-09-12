@@ -19,7 +19,11 @@ label escolha_interagir_anthony:
     
     "Anna franze o cenho levemente, suas habilidades de repórter despertando para a sutileza nas palavras de Anthony. Ele parece estar se referindo a algo ou a alguém em particular."
     
-    a "{i}Será que ele está falando de Miguel Duval?{/i}"
+    if investigou_atlas == True:
+        a "{i}Será que ele está falando de Miguel Duval?{/i}"
+
+    else:
+        a "{i}Ele está falando de alguém específico... quem?{/i}"
     
     "Ainda sem se aproximar demais, Anna decide observar mais antes de agir. Anthony é claramente alguém que precisa ser abordado com cautela. Ele exala confiança, mas o nervosismo disfarçado em seus olhos revela que ele tem mais em jogo do que aparenta."
 
