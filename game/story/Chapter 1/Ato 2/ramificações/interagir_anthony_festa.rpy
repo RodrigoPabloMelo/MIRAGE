@@ -1,12 +1,4 @@
 label escolha_interagir_anthony:
-    "Anna passa pelos seguranças e finalmente adentra o salão principal do cruzeiro."
-    
-    "O salão é vasto, com lustres de cristal pendendo do teto alto e uma decoração luxuosa que mistura o clássico com o moderno. Músicas suaves tocam ao fundo, enquanto os convidados, vestidos com trajes de gala, conversam e brindam com taças de champanhe."
-    
-    "Anna respira fundo, sentindo o ambiente sofisticado e, ao mesmo tempo, a tensão discreta entre as figuras poderosas ao redor. Ela observa as pessoas, tentando identificar rostos conhecidos."
-    
-    a "{i}É aqui que as verdadeiras histórias começam a surgir...{/i}"
-    
     "Enquanto se mistura entre os convidados, Anna nota um homem de estatura média, com um terno impecavelmente ajustado, falando com um pequeno grupo. Ele mantém uma postura confiante, e a maneira como as pessoas ao redor dele o escutam com atenção deixa claro que é alguém de influência."
     
     "Ela se aproxima sutilmente, sem chamar muita atenção, observando-o com mais detalhes."

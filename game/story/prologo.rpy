@@ -122,7 +122,7 @@ label start:
     Acomode-se, relaxe e embarque nessa viagem com tudo incluso no pacote completo
     para tirar o melhor proveito da experiência!
 
-    Responda a esta carta até o dia 11/07,
+    Responda a esta carta até o dia 11/09,
     nos enviando uma confirmação da sua presença.
     Contamos com você!
 

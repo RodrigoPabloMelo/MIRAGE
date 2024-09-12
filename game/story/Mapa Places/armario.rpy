@@ -6,10 +6,19 @@ label armario:
     a "Tem algo estranho nesse armário."
     a "Não consigo abrir."
 
-    "A fechadura parece ser eletronica, precisa de uma senha para abrir."
+    menu armario_opcoes:
+        "Tentar abrir":
+            jump insira_senha
+        "Voltar":
+            jump explorar_investigar
+
+    
 
     label insira_senha:
         show screen hud
+
+        "A fechadura parece ser eletronica, precisa de uma senha para abrir."
+
         $ senha_armario = renpy.input("Insira a senha:")
 
         if senha_armario == "5379":
@@ -18,9 +27,8 @@ label armario:
 
             a "A senha estava correta!"
             jump armario_aberto
+            
         else:
             "Senha incorreta. O display fica vermelho."
             "\"Tente novamente.\""
             jump insira_senha
-
-    jump explorar_investigar
