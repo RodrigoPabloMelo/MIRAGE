@@ -110,28 +110,37 @@ label start:
     extend "é uma carta."
     "Impresso em papel de alta qualidade."
 
-    window hide
-    nvl show
-    nvl_nar """
-    Olá Anna!
+    show carta_convite at center 
+    with moveinbottom
+    with Pause(90)
 
-    Você deseja fazer parte da história?
+    hide carta_convite with moveintop
 
-    Você está convidada para o primeiro cruzeiro transatlântico de luxo do mundo.
-
-    Acomode-se, relaxe e embarque nessa viagem com tudo incluso no pacote completo
-    para tirar o melhor proveito da experiência!
-
-    Responda a esta carta até o dia 11/09,
-    nos enviando uma confirmação da sua presença.
-    Contamos com você!
-
-    Ass. {b}ATLAS Tour{/b}
-    """
-    nvl clear
-    nvl hide
+#    window hide
+#    nvl show
+#    nvl_nar """
+#    Olá Anna!
+#
+#    Você deseja fazer parte da história?
+#
+#    Você está convidada para o primeiro cruzeiro transatlântico de luxo do mundo.
+#
+#    Acomode-se, relaxe e embarque nessa viagem com tudo incluso no pacote completo
+#    para tirar o melhor proveito da experiência!
+#
+#    Responda a esta carta até o dia 11/09,
+#    nos enviando uma confirmação da sua presença.
+#    Contamos com você!
+#
+#    Ass. {b}ATLAS Tour{/b}
+#    """
+#    nvl clear
+#    nvl hide
 
     $ inventario.add_item(carta_convite)
+
+    a "Bem... "
+    extend "certo."
 
     show text "{i}Inventário Atualizado: Carta de Convite da ATLAS Tour{/i}" with dissolve
     with Pause(1)
