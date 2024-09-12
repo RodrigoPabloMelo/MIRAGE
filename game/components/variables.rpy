@@ -14,3 +14,7 @@ default horario = list(range(0, 2))
 
 default investigou_atlas = False
 default segurança_confiança = False
+
+default see_actions = False
+default falou_anthony = False
+default falou_veronica = False
