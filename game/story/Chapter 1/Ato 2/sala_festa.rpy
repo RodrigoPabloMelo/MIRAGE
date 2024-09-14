@@ -23,8 +23,14 @@ label sala_festa:
         if see_actions == True:
             """
             Anna avista um {b}homem de terno preto, conversando com um grupo de convidados{/b}.
+
             Uma {b}mulher alta, loira e glamourosa, que parece ser conhecida por todos{/b}.
+
+            Uma {b}mulher de cabelos negros, com um vestido vermelho luxuoso{/b}.
             """
+            show sophie_neutral at right
+            show veronica_neutral at center
+            with dissolve
 
         menu averiguar:
             "Observar o ambiente" if see_actions == False:
