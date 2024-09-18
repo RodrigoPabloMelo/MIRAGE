@@ -1,4 +1,9 @@
 label escolha_interagir_veronica:
+    hide anthony_neutral
+    hide sophie_neutral
+    show veronica_neutral at center
+    with dissolve
+
     a "Aquela mulher loira parece deslocada... Ela está sozinha, o que é estranho em uma festa tão cheia de pessoas importantes."
 
     "Anna observa a mulher por alguns instantes. Alta, elegante, com um vestido caro e cabelos loiros impecáveis, ela exala uma aura de sofisticação, mas algo está fora de lugar."

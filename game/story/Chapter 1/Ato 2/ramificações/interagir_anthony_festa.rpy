@@ -1,8 +1,12 @@
 label escolha_interagir_anthony:
-    "Enquanto se mistura entre os convidados, Anna nota um homem de estatura média, com um terno impecavelmente ajustado, falando com um pequeno grupo. Ele mantém uma postura confiante, e a maneira como as pessoas ao redor dele o escutam com atenção deixa claro que é alguém de influência."
-
+    hide sophie_neutral
+    hide veronica_neutral
     show t at center
     with dissolve
+
+    "Enquanto se mistura entre os convidados, Anna nota um homem de estatura média, com um terno impecavelmente ajustado, falando com um pequeno grupo. Ele mantém uma postura confiante, e a maneira como as pessoas ao redor dele o escutam com atenção deixa claro que é alguém de influência."
+
+    
     
     "Ela se aproxima sutilmente, sem chamar muita atenção, observando-o com mais detalhes."
     

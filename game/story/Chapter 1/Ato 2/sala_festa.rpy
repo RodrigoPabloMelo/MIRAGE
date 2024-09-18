@@ -41,6 +41,7 @@ label sala_festa:
             """
             show sophie_neutral at right
             show veronica_neutral at center
+            show t at left
             with dissolve
 
         menu averiguar:
