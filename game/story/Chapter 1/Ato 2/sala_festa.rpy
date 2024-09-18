@@ -39,14 +39,22 @@ label sala_festa:
 
         if see_actions == True:
 
-            if not(falou_anthony):
-                "Anna avista um {b}homem de terno preto, conversando com um grupo de convidados{/b}."
-            
-            elif not(falou_veronica):
-                "Uma {b}mulher alta, loira e glamourosa, que parece ser conhecida por todos{/b}."
+            "Anna avista:"
 
-            elif not(falou_sophie):
+            if not(falou_anthony):
+                "Um {b}homem de terno preto, conversando com um grupo de convidados{/b}."
+            else:
+                pass
+            
+            if not(falou_veronica):
+                "Uma {b}mulher alta, loira e glamourosa, que parece ser conhecida por todos{/b}."
+            else:
+                pass
+
+            if not(falou_sophie):
                 "Uma {b}mulher de cabelos negros, com um vestido vermelho luxuoso{/b}."
+            else:
+                pass
             
             show sophie_neutral at right
             show veronica_neutral at center

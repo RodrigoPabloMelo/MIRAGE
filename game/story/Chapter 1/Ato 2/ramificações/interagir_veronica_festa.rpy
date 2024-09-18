@@ -1,8 +1,10 @@
 label escolha_interagir_veronica:
+    hide t
+    hide sophie_neutral
+    with dissolve
+
     $ falou_veronica = True
 
-    hide anthony_neutral
-    hide sophie_neutral
     show veronica_neutral at center
     with dissolve
 
@@ -14,6 +16,9 @@ label escolha_interagir_veronica:
 
     menu:
         "Aproximar-se e iniciar uma conversa educada":
+            show a at right
+            show veronica_neutral at left
+            with moveinright
             jump conversar_educadamente_veronica
         "Observar mais antes de agir":
             jump observar_mais_veronica
