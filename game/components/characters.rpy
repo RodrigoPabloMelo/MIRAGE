@@ -16,7 +16,7 @@ image s = "sophie_neutral"
 define v = Character("Veronica", color="#e1ff37", what_prefix='"', what_suffix='"',  who_outlines=[(absolute(2), "#352f36", absolute(1), absolute(1))])
 image v = "veronica_neutral"
 
-define t = Character("Anthony", color="#46aa63", what_prefix='"', what_suffix='"',  who_outlines=[(absolute(2), "#352f36", absolute(1), absolute(1))])
+define t = Character("Anthony", color="#4e56c4", what_prefix='"', what_suffix='"',  who_outlines=[(absolute(2), "#352f36", absolute(1), absolute(1))])
 image t = "anthony_neutral"
 
 define s = Character("Segurança", color="#6cc4f7", what_prefix='"', what_suffix='"',  who_outlines=[(absolute(1), "#352f36", absolute(0), absolute(0))])
