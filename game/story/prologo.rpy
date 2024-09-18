@@ -54,6 +54,7 @@ label start:
     extend "não... "
     extend "dois cafés."
 
+    play audio "sfx/campainha.mp3"
     "*{i}Bling blong{/i}*" 
 
     a "Hm?"
@@ -61,11 +62,13 @@ label start:
     "A campainha toca."
     extend " Anna não estava esperando ninguém."
 
+    play audio "sfx/porta_bater.mp3"
     scene anna_entrada
     with dissolve
-
+    
     "Ela se levanta e vai até a porta."
 
+    play audio "sfx/porta_abrir.mp3"
     scene anna_fora
     with dissolve
     
@@ -93,9 +96,9 @@ label start:
             pass
     
     """
-    O entregador apenas sorri e se retira.
+    O entregador apenas sorri e sai.
 
-    Anna fecha a porta e se retira.
+    Anna fecha a porta em confusão.
 
     Com o envelope em mãos, um selo dourado ostenta o símbolo de um {b}barco estilizado{/b}.
     """
@@ -149,6 +152,10 @@ label start:
 
     window show
 
+    a "Essa é uma boa oportunidade para eu entregar um artigo de sucesso..."
+    a "Se me chamaram, tenho certeza que algo querem esconder... "
+    extend "ou mostrar."
+
     "{i}O que Anna deve fazer?{/i}"
 
     menu primeira_acao:
@@ -160,6 +167,7 @@ label start:
     
     if investigou_atlas == True:
         a "Eu preciso de mais informações."
+        play audio "sfx/telefone_toque.mp3"
         "Uma ligação interrompe Anna."
 
         show a at center with vpunch
@@ -184,29 +192,27 @@ label start:
 
 # Anna investiga a ATLAS Tour ####################################################################
 label investigar_atlas:
+    centered "Resolva o quebra cabeça para acessar o computador."
+    menu puzzle_atlas:
+        "Resolvido!":
+            "Anna procura em diversos sites de notícias e blogs sobre a ATLAS Tour."
+            "Após algumas horas de pesquisa, ela encontra algumas informações sobre a empresa."
+            pass
+        "Voltar":
+            $ atlas_tour_computador.available = False
+            $ investigou_atlas = False
+            jump investigar_atlas
+
     $ atlas_tour_computador.available = True
 
     "Anna vai até o computador e pesquisa:"
     menu atlas_computador:
         "[atlas_tour_computador.name]" if atlas_tour_computador.available and not(atlas_tour_computador.completed):
             $ investigou_atlas = True
-
             a "Certo... "
-
-            "Anna encontra algumas informações sobre a empresa..."
-            
             a "ATLAS Tour..."
-            a "aqui diz: \'{i}Nossa missão é proporcionar experiências únicas, levando nossos passageiros a destinos extraordinários com um nível de luxo e conforto incomparáveis.{/i}\'"
-
-            a "Hm... "
-            extend "parece interessante."
-            a "Mas, isso ainda não me diz muito."
-
-            "Ela continua a pesquisar."
 
             a "Ah, aqui está!"
-            a "O site diz que a ATLAS Tour é uma filiada."
-            a "Eles são uma empresa  especializada no ramo de luxo."
 
             window hide
             nvl show
@@ -214,15 +220,31 @@ label investigar_atlas:
             A ATLAS Tour é uma empresa fundada em 2010, especializada em viagens de luxo.
             Pela empresa já se passou nomes como Lucien Girard, antigo CEO da empresa, e recente ex-sócio do atual CEO: {b}Miguel Duvall{/b}.
 
-            Filiada da {b}ATLAS Corporation{/b}, a empresa é conhecida por ser pioneira no ramo de turismo sob as àguas.
-            a {b}ATLAS Corporation{/b} é uma empresa multinacional que atua em diversos setores, como turismo, entretenimento e outros serviços.
-
-            Apesar disso, a empresa vem sendo alvo de críticas por conta de suas práticas de negócio.
-            A fundação de mais de 400 hotéis de luxo em áreas de preservação ambiental e a expulsão de comunidades locais para a construção de resorts são algumas das acusações.
-
-            No entanto a empresa nega que tenha cometido qualquer irregularidade, dizendo ter autorização dos governos locais para a construção dos hotéis.
+            Filiada da multinacional {b}ATLAS Corporation{/b}, a empresa é conhecida por ser pioneira no ramo de turismo sob as àguas.
+            Atuando também em diversos setores, como turismo, entretenimento e outros serviços.
             """
             nvl clear
+
+            "Pesquisar afundo sobre..."
+            menu escandalos:
+                "Escândalo Interno":
+                    a "Algo rolava enquanto Girard mantinha a postura..."
+
+                    nvl_nar """
+                    Lucien Girard.
+                        
+                    o homem que já foi o braço direito de Miguel Duval. Era o fundador da ATLAS Tour e um dos pioneiros no ramo de turismo de luxo.
+
+                    No entanto, em 2018, após uma crise nos negócios da ATLAS Tour, a empresa guarda-chuva ATLAS Corporation resolveu desconectá-lo completamente da empresa.
+                    """
+                "Acusações Ilegais":
+                    nvl_nar """
+                    A empresa vem sendo alvo de críticas por conta de suas práticas de negócios.
+                    A Abertura de mais de 400 hotéis de luxo em áreas de preservação ambiental e a expulsão de comunidades locais para a construção de resorts são algumas das acusações.
+
+                    No entanto a empresa nega que tenha cometido qualquer irregularidade.
+                    """
+
             nvl hide
             window show
 
@@ -231,30 +253,44 @@ label investigar_atlas:
 
             
 
-            menu pesquisa_nome:
-                "Miguel Duvall":
-                    a "Miguel Duvall?"
-                    "\"Miguel Duvall, 30 anos, atual CEO da ATLAS Tour.\""
-                    "\"Nascido e criado em São Paulo, Duvall é conhecido pelo seu carisma, ser firme, e por ser um homem de negócios bem-sucedido.\""
-                    pass
-
-                "Lucien Girard":
-                    a "Lucien Girard?"
-                    "\"Lucien Girard, 45 anos, ex-CEO da ATLAS Tour.\""
-                    "\"Girard foi o fundador da ATLAS Tour e um dos pioneiros no ramo de turismo de luxo.\""
-                    "\"Ele deixou a empresa em 2018, após uma crise nos negócios da ATLAS Tour, a empresa guarda-chuva ATLAS Corporation resolveu desconectá-lo completamente da empresa.\""
-                    pass
-
-                "ATLAS Corporation":
-                    a "ATLAS Corporation?"
-                    "\"ATLAS Corporation, empresa multinacional que atua em diversos setores, como turismo, entretenimento e outros serviços.\""
-                    "\"Algumas das filiadas são: ATLAS Host, ATLAS Tour e Cine ATLAS.\""
-                    pass
+#           menu pesquisa_nome:
+#               "Miguel Duvall":
+#                   a "Miguel Duvall?"
+#                   "\"Miguel Duvall, 30 anos, atual CEO da ATLAS Tour.\""
+#                   "\"Nascido e criado em São Paulo, Duvall é conhecido pelo seu carisma, ser firme, e por ser um homem de negócios bem-sucedido.\""
+#                   pass
+#
+#               "Lucien Girard":
+#                   a "Lucien Girard?"
+#                   "\"Lucien Girard, 45 anos, ex-CEO da ATLAS Tour.\""
+#                   "\"Girard foi o fundador da ATLAS Tour e um dos pioneiros no ramo de turismo de luxo.\""
+#                   "\"Ele deixou a empresa em 2018, após uma crise nos negócios da ATLAS Tour, a empresa guarda-chuva ATLAS Corporation resolveu desconectá-lo completamente da empresa.\""
+#                   pass
+#
+#               "ATLAS Corporation":
+#                   a "ATLAS Corporation?"
+#                   "\"ATLAS Corporation, empresa multinacional que atua em diversos setores, como turismo, entretenimento e outros serviços.\""
+#                   "\"Algumas das filiadas são: ATLAS Host, ATLAS Tour e Cine ATLAS.\""
+#                   pass
             
             "Hm..."
             return
 
         "\"Primeiro cruzeiro transatlântico de luxo do mundo\"":
+            a "Ah, o primeiro cruzeiro transatlântico de luxo da ATLAS Tour... deve ser algo grandioso."
+
+            nvl show
+            nvl_nar """
+            O primeiro cruzeiro transatlântico de luxo da ATLAS Tour, o {b}MIRAGE{/b}. Este evento marcará um ponto de virada na indústria de turismo de luxo, oferecendo uma experiência sem precedentes para os viajantes.
+
+            MIRAGE foi projetado com a mais alta tecnologia e com uma atenção meticulosa aos detalhes de luxo. Com uma capacidade para poucos passageiros, cada cabine será uma suíte com vista panorâmica, e o navio oferece uma gama de amenities exclusivas, como restaurantes gourmet, um spa de classe mundial e atividades de entretenimento sofisticadas.
+
+            O MIRAGE tem causado um movimento no meio de luxo e tem sido sinônimo de elegância e inovação, alguns especialistas dizem que estabelecerá um novo padrão para os cruzeiros de luxo em todo o mundo.
+            """
+            nvl clear
+
+            a "Isso é realmente impressionante... parece que a ATLAS Tour se estabeleceu de vez no mercado de luxo com esse lançamento."
+
             return
         "11/07...":
             return
@@ -269,8 +305,10 @@ label ligar_editor:
 
     "Anna pega seu telefone e rapidamente disca o número de seu editor."
 
+    play audio "sfx/telefone_toque.mp3"
     a "Espero que ele não esteja de mau humor hoje..."
 
+    play audio "sfx/telefone_toque.mp3"
     "O telefone toca uma, duas vezes, antes de ser atendido."
 
     e "Anna? Já está com a matéria pronta, certo?"
@@ -307,8 +345,8 @@ label ligar_editor:
 
             e "E o que tem de tão especial nisso?"
 
-            a "Não sei... "
-            extend "Mas acho que pode ser uma grande oportunidade."
+            a "Bem... "
+            extend "Acho que pode ser uma grande oportunidade."
 
             e "Hm... "
             extend "Entendo."
@@ -365,8 +403,10 @@ label ligar_editor:
     extend "A gente vai conversando."
 
     "A ligação termina, e Anna se prepara para a próxima etapa."
-    "Anna desliga o telefone, sentindo a adrenalina correr. Ela não só conseguiu a aprovação do editor, mas também sentiu que estava prestes a descobrir algo maior do que imaginava."
 
+    play audio "sfx/telefone_off.mp3"
+    "Anna desliga o telefone, sentindo a adrenalina correr. Ela não só conseguiu a aprovação do editor, mas também sentiu que estava prestes a descobrir algo maior do que imaginava."
+    queue audio "sfx/woman_sigh.mp3"
     return
 
     
