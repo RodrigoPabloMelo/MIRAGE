@@ -292,7 +292,7 @@ label investigar_atlas:
             a "Isso é realmente impressionante... parece que a ATLAS Tour se estabeleceu de vez no mercado de luxo com esse lançamento."
 
             return
-        "11/07...":
+        "11/09...":
             return
 #################################################################################################
 
