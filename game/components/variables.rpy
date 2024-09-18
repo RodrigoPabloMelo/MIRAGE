@@ -16,5 +16,11 @@ default investigou_atlas = False
 default segurança_confiança = False
 
 default see_actions = False
+default see_actions_after = False
+
 default falou_anthony = False
 default falou_veronica = False
+default falou_sophie = False
+
+default use_new_name = False
+default new_name = "Anna"
