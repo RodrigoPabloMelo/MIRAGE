@@ -1,6 +1,12 @@
 label sala_festa:
+    play music "audio/jazz_hall.mp3" loop volume 0.2
+    play audio "sfx/crowd_talks.mp3" volume 0.1
+
     scene main_hall
     with Fade(2.0, 1.0, 2.0)
+
+    
+    
 
     show text "Hall Principal do Cruzeiro, 11 de setembro, 17:00" with dissolve
     with Pause(2)
@@ -9,6 +15,8 @@ label sala_festa:
 
     window show
     with dissolve
+
+    
 
     "Anna passa pelos seguranças e finalmente adentra o salão principal do cruzeiro."
     
@@ -20,6 +28,9 @@ label sala_festa:
 
 
     label explorar_festa:
+        stop audio fadeout 2.0
+        stop music fadeout 2.0
+
         if see_actions == True:
             """
             Anna avista um {b}homem de terno preto, conversando com um grupo de convidados{/b}.
@@ -37,11 +48,14 @@ label sala_festa:
                 $ see_actions = True
                 jump explorar_festa
 
-            "Investigar com o homem de terno" if not(falou_anthony) and see_actions == True:
+            "Investigar o homem de terno" if not(falou_anthony) and see_actions == True:
                 jump escolha_interagir_anthony
             
-            "Investigar com a mulher loira" if not(falou_veronica) and see_actions == True:
+            "Investigar a mulher loira" if not(falou_veronica) and see_actions == True:
                 jump escolha_interagir_veronica
+            
+            "Investigar a mulher de vermelho" if not(falou_sophie) and see_actions == True:
+                jump escolha_interagir_sophie
         
         return
 

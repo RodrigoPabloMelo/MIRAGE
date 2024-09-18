@@ -1,4 +1,10 @@
 label sala_segurança:
+    play audio "sfx/sea_waves.mp3" loop volume 0.05
+    scene sala_segura
+    with fade
+
+    show a at center with dissolve
+
     "Anna é escoltada por dois seguranças até uma pequena sala com câmeras de vigilância, com monitores mostrando diferentes partes do navio."
     
     "A sala de segurança tem uma iluminação fria, quase estéril, e o som abafado das ondas do mar só aumenta a tensão do momento."

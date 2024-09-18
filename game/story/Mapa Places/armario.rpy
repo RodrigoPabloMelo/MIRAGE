@@ -21,7 +21,7 @@ label armario:
 
         $ senha_armario = renpy.input("Insira a senha:")
 
-        if senha_armario == "5379":
+        if senha_armario == "2784":
             "Um clique é ouvido."
             "O armário se abre."
 
