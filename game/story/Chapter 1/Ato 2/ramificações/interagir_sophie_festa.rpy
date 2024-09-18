@@ -1,0 +1,1 @@
+label escolha_interagir_sophie:
