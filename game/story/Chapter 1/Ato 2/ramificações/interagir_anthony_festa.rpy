@@ -136,23 +136,32 @@ label escolha_interagir_anthony:
                                     a "Obrigada."
             
                                     jump explorar_festa
-                            
-                                "Mencionar interesse em Anthony":
-                                    a "Estou interessada em pessoas como você, Anthony. Pessoas influentes, que sabem como manter o controle."
-            
-                                    "Anthony parece surpreso por um momento, mas logo recupera a compostura."
-            
-                                    t "Ah, então você é uma observadora. Interessante."
-            
-                                    a "Algo assim."
-            
-                                    t "Bem, espero que encontre o que procura. Mas lembre-se... nem tudo é o que parece."
-            
-                                    a "Vou manter isso em mente."
-            
+                                
+                                "Inventar uma profissão":
+                                    a "Eu sou uma crítica de serviços de luxo. Estou aqui para avaliar a qualidade do cruzeiro."
+
+                                    t "Ah, uma crítica. Interessante. Espero que tenha uma experiência... agradável."
+
+                                    "Anthony sorri, mas Anna pode sentir que ele não está totalmente convencido."
+                                    
                                     jump explorar_festa
+                            
+                        "Mencionar interesse em Anthony":
+                            a "Estou interessada em pessoas como você, Anthony. Pessoas influentes, que sabem como manter o controle."
+            
+                            "Anthony parece surpreso por um momento, mas logo recupera a compostura."
+            
+                            t "Ah, então você é uma observadora. Interessante."
+            
+                            a "Algo assim."
+            
+                            t "Bem, espero que encontre o que procura. Mas lembre-se... nem tudo é o que parece."
+            
+                            a "Vou manter isso em mente."
             
                             jump explorar_festa
+            
+                    jump explorar_festa
         
         "Observar à distância":
             a "{i}Ainda é cedo para me aproximar... Melhor observar mais.{/i}"
