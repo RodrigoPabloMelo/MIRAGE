@@ -58,18 +58,18 @@ label chapter_1:
 
             jump sala_festa
 
-        "Não lembro o nome":
+        "ATLAS Corporation":
             $ segurança_confia = False
-            a "Foi um convite pessoal, mas não lembro o nome de quem me convidou."
+            a "Foi um convite pessoal, da ATLAS Corporation."
 
             "O segurança parece desconfiado."
             "Ele olha para o convite novamente e depois para Anna."
 
             s "Hmm... "
-            extend "Não lembra o nome que estava no convite?"
+            extend "Isso é um pouco esquisito"
 
-            a "Não... "
-            a "Foi um convite pessoal, mas não lembro o nome."
+            a "O que? Por quê?"
+            a "Foi um convite pessoal, a ATLAS Corporation me convidou para cobrir o evento."
 
             "O segurança parece ainda mais desconfiado."
             "Ele olha para Anna com um olhar penetrante."
