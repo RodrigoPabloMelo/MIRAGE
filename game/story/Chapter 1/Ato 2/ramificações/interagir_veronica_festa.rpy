@@ -1,4 +1,6 @@
 label escolha_interagir_veronica:
+    $ falou_veronica = True
+
     hide anthony_neutral
     hide sophie_neutral
     show veronica_neutral at center

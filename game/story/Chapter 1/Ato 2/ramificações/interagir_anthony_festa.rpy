@@ -1,4 +1,6 @@
 label escolha_interagir_anthony:
+    $ falou_anthony = True
+    
     hide sophie_neutral
     hide veronica_neutral
     show t at center

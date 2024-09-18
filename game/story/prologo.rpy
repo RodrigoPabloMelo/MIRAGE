@@ -152,7 +152,8 @@ label start:
 
     window show
 
-    a "Essa é uma boa oportunidade para eu entregar um artigo de sucesso..."
+    a "Eu deveria falar com o editor sobre isso... Pode ser uma grande oportunidade."
+    a "Uma oportunidade para eu entregar um artigo de sucesso..."
     a "Se me chamaram, tenho certeza que algo querem esconder... "
     extend "ou mostrar."
 
@@ -292,8 +293,8 @@ label investigar_atlas:
             a "Isso é realmente impressionante... parece que a ATLAS Tour se estabeleceu de vez no mercado de luxo com esse lançamento."
 
             return
-        "11/09...":
-            return
+        #"11/09...":
+        #    return
 #################################################################################################
 
 # Anna liga para o editor #######################################################################
@@ -301,7 +302,6 @@ label ligar_editor:
     $ ligou_editor == True
 
     show a at center with dissolve
-    a "Eu deveria falar com o editor sobre isso... Pode ser uma grande oportunidade."
 
     "Anna pega seu telefone e rapidamente disca o número de seu editor."
 

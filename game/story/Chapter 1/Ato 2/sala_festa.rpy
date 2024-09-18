@@ -31,14 +31,23 @@ label sala_festa:
         stop audio fadeout 2.0
         stop music fadeout 2.0
 
+        hide a
+        hide t
+        hide s
+        hide v
+        with dissolve
+
         if see_actions == True:
-            """
-            Anna avista um {b}homem de terno preto, conversando com um grupo de convidados{/b}.
 
-            Uma {b}mulher alta, loira e glamourosa, que parece ser conhecida por todos{/b}.
+            if not(falou_anthony):
+                "Anna avista um {b}homem de terno preto, conversando com um grupo de convidados{/b}."
+            
+            elif not(falou_veronica):
+                "Uma {b}mulher alta, loira e glamourosa, que parece ser conhecida por todos{/b}."
 
-            Uma {b}mulher de cabelos negros, com um vestido vermelho luxuoso{/b}.
-            """
+            elif not(falou_sophie):
+                "Uma {b}mulher de cabelos negros, com um vestido vermelho luxuoso{/b}."
+            
             show sophie_neutral at right
             show veronica_neutral at center
             show t at left
