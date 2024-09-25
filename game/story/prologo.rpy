@@ -16,8 +16,9 @@ label splashscreen:
     return
 
 # O Jogo Começa Aqui
-label start:
+label iniciar:
     $ culpado = renpy.random.choice(suspeitos)
+
     window hide
 
     scene anna_quarto
@@ -193,17 +194,16 @@ label start:
 
 # Anna investiga a ATLAS Tour ####################################################################
 label investigar_atlas:
-    centered "Resolva o quebra cabeça para acessar o computador."
-    menu puzzle_atlas:
-        "Resolvido!":
-            "Anna procura em diversos sites de notícias e blogs sobre a ATLAS Tour."
-            "Após algumas horas de pesquisa, ela encontra algumas informações sobre a empresa."
-            pass
-        "Voltar":
-            $ atlas_tour_computador.available = False
-            $ investigou_atlas = False
-            jump investigar_atlas
+    centered "Resolva o CAPTCHA."
+    window hide
 
+    $ create_blocks()
+    call screen unblock_puzzle
+
+label solved_puzzle:
+    $ create_blocks()
+    window show
+    with dissolve
     $ atlas_tour_computador.available = True
 
     "Anna vai até o computador e pesquisa:"
@@ -296,6 +296,7 @@ label investigar_atlas:
         #"11/09...":
         #    return
 #################################################################################################
+
 
 # Anna liga para o editor #######################################################################
 label ligar_editor:
