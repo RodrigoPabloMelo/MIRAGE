@@ -286,7 +286,6 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen navigation():
-
     vbox:
         style_prefix "navigation"
 
@@ -330,7 +329,6 @@ screen navigation():
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
-
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
@@ -356,12 +354,62 @@ screen main_menu():
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
+    #frame:
+    #    style "main_menu_frame"
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    #use navigation
+
+    fixed:
+        style_prefix "navigation"
+
+        #xpos gui.navigation_xpos
+        #yalign 0.5
+
+        spacing gui.navigation_spacing
+
+        if main_menu:
+
+            #textbutton _("Start") action Start()
+
+            imagebutton auto "gui/mm_start_%s.png" xpos 896 ypos 349 focus_mask True action Start()
+
+        else:
+
+            textbutton _("History") action ShowMenu("history")
+
+            textbutton _("Save") action ShowMenu("save")
+
+        # textbutton _("Load") action ShowMenu("load")
+
+        imagebutton auto "gui/mm_load_%s.png" xpos 903 ypos 464 focus_mask True action ShowMenu("load")
+
+        imagebutton auto "gui/mm_itens_%s.png" xpos 899 ypos 562 focus_mask True action ShowMenu("inventario")
+
+        #textbutton _("Preferences") action ShowMenu("preferences")
+
+        #if _in_replay:
+
+        #    textbutton _("End Replay") action EndReplay(confirm=True)
+
+        #elif not main_menu:
+
+        #    textbutton _("Main Menu") action MainMenu()
+
+        #textbutton _("About") action ShowMenu("about")
+
+        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+            ## Help isn't necessary or relevant to mobile devices.
+        #    textbutton _("Help") action ShowMenu("help")
+
+        if renpy.variant("pc"):
+
+            ## The quit button is banned on iOS and unnecessary on Android and
+            ## Web.
+            #textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton auto "gui/mm_exit_%s.png" xpos 901 ypos 661 focus_mask True action Quit(confirm=not main_menu)
 
     if gui.show_name:
 
