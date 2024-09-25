@@ -65,6 +65,9 @@ label ato2_parte1:
     "Ela se apressa em direção ao salão principal."
 
     scene main_hall
+    show t at center
+    show s at left
+    show v at right
     with dissolve
 
     a "Todos estão aqui"
@@ -82,17 +85,32 @@ label ato2_parte1:
     jump escolha_salao_ato2
 
     label escolha_salao_ato2:
-        menu:
-            "Falar com Verônica":
-                jump falar_veronica_ato2
+        if falou_anthony_ato2 == True and falou_sophie_ato2 == True and falou_veronica_ato2 == True:
+            $ all_actions_ato2 = True
+        
+        if all_actions_ato2 == True:
+            jump ato_2_parte_2
+        else:
+            menu:
+                "Falar com Verônica" if not(falou_veronica_ato2):
+                    $ falou_veronica_ato2 = True
+                    jump falar_veronica_ato2
 
-            "Falar com Anthony":
-                jump falar_anthony_ato2
+                "Falar com Anthony" if not(falou_anthony_ato2):
+                    $ falou_anthony_ato2 = True
+                    jump falar_anthony_ato2
 
-            "Falar com Sophie":
-                jump falar_sophie_ato2
+                "Falar com Sophie" if not(falou_sophie_ato2):
+                    $ falou_sophie_ato2 = True
+                    jump falar_sophie_ato2
 
 label falar_veronica_ato2:
+    a "Verônica...?"
+
+    "Verônica parece estar em estado de choque absoluto."
+    "Ela não responde, parece não escutar nada do que está acontecendo ao seu redor."
+
+    jump escolha_salao_ato2
 
 label falar_anthony_ato2:
     a "Senhor Anthony...?"
@@ -114,6 +132,32 @@ label falar_anthony_ato2:
 
     t "Sim, eu ouvi. É... é horrível."
 
+    "Ele parece saber mais do que está dizendo."
+
+    a "Você conhecia bem o senhor Duvall, não?"
+
+    t "Eu diria que tínhamos uma relação cordial, negócios, eventos... coisas dessa natureza."
+    t "Mas como todos, temos nossas vidas separadas. O que acontece nos bastidores não cabe a mim especular."
+
+    "Anthony desvia o olhar por um momento, claramente tentando controlar a narrativa e garantir que Anna não o pressione demais."
+
+    a "O ruim é que coisas assim podem afetar a reputação da ATLAS Corporation."
+    a "E, por consequência, a sua."
+
+    t "hm?"
+
+    a "Coisas assim abalam a confiança dos investidores, não é?"
+
+    "Anthony parece desconfortável com a pergunta."
+
+    a "Acho que todos têm algo a perder em uma situação dessas."
+
+    t "Sim, alguns mais do que outros."
+
+    "Anthony parece querer encerrar a conversa."
+
+    jump escolha_salao_ato2
+
 label falar_sophie_ato2:
     a "Senhorita Sophie..."
 
@@ -124,40 +168,42 @@ label falar_sophie_ato2:
     else:
         s "Anna, né?"
 
-        a "Sim, como você está?"
+    a "Sim, como você está?"
 
-        s "...  Não sei, perplexa, eu acho"
+    s "...  Não sei, perplexa, eu acho"
 
-        menu:
-            "Sinto muito":
-                a "Sinto muito pelo que aconteceu. Você está bem?"
+    menu:
+        "Sinto muito":
+            a "Sinto muito pelo que aconteceu. Você está bem?"
 
-                "Ela não parece ouvir a pergunta, está absorta em seus próprios pensamentos."
+            "Ela não parece ouvir a pergunta, está absorta em seus próprios pensamentos."
             
-            "Ele era seu amigo não era?" if sophie_amigavel == True:
-                a "Ele era seu amigo, não era? Deve estar sendo doloroso"
+        "Ele era seu amigo não era?" if sophie_amigavel == True:
+            a "Ele era seu amigo, não era? Deve estar sendo doloroso"
 
-                "Sophie olha para Anna, surpresa."
+            "Sophie olha para Anna, surpresa."
 
-                s "Como você sabe disso?"
+            s "Como você sabe disso?"
 
-                a "Nós conversamos antes, lembra?"
+            a "Nós conversamos antes, lembra?"
 
-                "Sophie parece confusa, mas logo recupera a compostura."
+            "Sophie parece confusa, mas logo recupera a compostura."
 
-                s "Ele era muito mais do que um amigo..."
-                s "Nós tinhamos uma conexão, sabe?"
-                s "Ele confiava em mim..."
+            s "Ele era muito mais do que um amigo..."
+            s "Nós tinhamos uma conexão, sabe?"
+            s "Ele confiava em mim..."
 
-                a "Eu sinto muito, Sophie."
+            a "Eu sinto muito, Sophie."
 
-                "Sophie suspira, e parece se acalmar um pouco."
+            "Sophie suspira, e parece se acalmar um pouco."
 
-                if use_new_name == True:
-                    s "Obrigada, [new_name]."
-                    pass
-                else:
-                    s "Obrigada, Anna."
-                    pass
+            if use_new_name == True:
+                s "Obrigada, [new_name]."
+                pass
+            else:
+                s "Obrigada, Anna."
+                pass
 
-                "Ela parece não querer falar mais sobre o assunto."
+            "Ela parece não querer falar mais sobre o assunto."
+
+            jump escolha_salao_ato2
