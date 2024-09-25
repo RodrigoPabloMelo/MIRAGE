@@ -11,7 +11,7 @@ label chapter_1:
     window show
     with dissolve
 
-    s "Boa noite, senhora. Posso ver o seu convite, por favor?"
+    se "Boa noite, senhora. Posso ver o seu convite, por favor?"
 
     show a at left
     with moveinleft
@@ -22,7 +22,7 @@ label chapter_1:
     "O segurança dá uma olhada no convite e depois rapidamente para Anna."
     "Ele parece um pouco mais atento agora..."
 
-    s "\'Repórter\', é? Não vejo muitos {i}desse tipo{/i} por aqui... " 
+    se "\'Repórter\', é? Não vejo muitos {i}desse tipo{/i} por aqui... " 
     extend "Quem a convidou?"
 
     menu segurança_atlas_inauguracao:
@@ -41,20 +41,20 @@ label chapter_1:
             "O segurança parece satisfeito com a resposta de Anna."
             "Ele relaxa levemente ao ouvir o nome de Miguel"
 
-            s "Ah, entendi."
-            s "Se veio a pedido do senhor Duval, é bem-vinda."
+            se "Ah, entendi."
+            se "Se veio a pedido do senhor Duval, é bem-vinda."
 
             "Ele devolve o convite e inclina a cabeça com um gesto cordial."
 
-            s "Se precisar de algo, sinta-se à vontade para perguntar."
-            s "Mas, um aviso: {i}algumas pessoas aqui não gostam muito de perguntas...{/i}"
+            se "Se precisar de algo, sinta-se à vontade para perguntar."
+            se "Mas, um aviso: {i}algumas pessoas aqui não gostam muito de perguntas...{/i}"
 
             a "É... "
             extend "Entendi."
             a "Obrigada pelo aviso."
             a "Vou ter cuidado."
 
-            s "Aproveite a festa, senhora."
+            se "Aproveite a festa, senhora."
 
             jump sala_festa
 
@@ -74,12 +74,12 @@ label chapter_1:
             "O segurança parece ainda mais desconfiado."
             "Ele olha para Anna com um olhar penetrante."
 
-            s "Bem... "
+            se "Bem... "
             extend "Vou ter que pedir que me acompanhe até a sala de segurança."
 
             "O segurança faz um gesto para um colega e se aproxima de Anna."
 
-            s "Por favor, me acompanhe."
+            se "Por favor, me acompanhe."
 
             "Anna é levada para a sala de segurança."
 
@@ -99,8 +99,8 @@ label chapter_1:
 
             "O segurança apenas acena."
 
-            s "Ah, entendi."
-            s "Seja bem-vinda Senhorita."
+            se "Ah, entendi."
+            se "Seja bem-vinda Senhorita."
 
             "Ele devolve o convite e apenas deixa Anna passar."
 
