@@ -9,13 +9,13 @@ label sala_segurança:
     
     "A sala de segurança tem uma iluminação fria, quase estéril, e o som abafado das ondas do mar só aumenta a tensão do momento."
     
-    s "Por favor, sente-se aqui."
+    se "Por favor, sente-se aqui."
     
     "Anna se senta em uma cadeira dura de metal, desconfortável, enquanto os seguranças a observam de pé."
 
     a "{i}Isso está ficando ridículo.{/i}"
     
-    s "Vamos verificar sua história."
+    se "Vamos verificar sua história."
     
     "Um dos seguranças começa a digitar algo em um computador, provavelmente confirmando a legitimidade do convite."
     
@@ -28,7 +28,7 @@ label sala_segurança:
             
             "O segurança que estava de pé cruza os braços, mantendo uma expressão séria."
             
-            s "E quem seria o seu contato direto na empresa? Alguma prova disso?"
+            se "E quem seria o seu contato direto na empresa? Alguma prova disso?"
             
             menu prova_contato:
                 "Citar Miguel Duvall" if investigou_atlas == True:
@@ -36,25 +36,29 @@ label sala_segurança:
                     
                     "Os seguranças se entreolham, e o que estava no computador rapidamente busca informações sobre Duvall."
                     
-                    s "Sr. Duvall, é? Hmm... já ouvi esse nome."
+                    se "Sr. Duvall, é? Hmm... já ouvi esse nome."
                     
                     "O segurança que estava digitando para por um momento e se vira para Anna, com uma expressão mais suave."
                     
-                    s "Se isso for verdade, é uma peça importante."
-                    s "Mas mesmo assim, você vai precisar aguardar um pouco até confirmarmos tudo."
+                    se "Se isso for verdade, é uma peça importante."
+                    se "Mas mesmo assim, você vai precisar aguardar um pouco até confirmarmos tudo."
                     
                     "Anna suspira, mas mantém a calma. Após alguns minutos, um dos seguranças recebe uma ligação."
                     
-                    s "Entendido. Sim, já está tudo claro."
+                    se "Entendido. Sim, já está tudo claro."
                     
                     "O segurança desliga o telefone e se aproxima de Anna."
                     
-                    s "Parece que tudo está em ordem, Senhorita Anna."
-                    s "Pedimos desculpas pelo transtorno."
+                    se "Parece que tudo está em ordem, Senhorita Anna."
+                    se "Pedimos desculpas pelo transtorno."
                     
                     a "{i}Finalmente...{/i}"
                     
-                    s "Está livre para voltar à festa."
+                    se "Está livre para voltar à festa."
+
+                    stop audio
+                    stop music
+                    stop sound
                     
                     jump sala_festa
 
@@ -63,12 +67,12 @@ label sala_segurança:
                     
                     "Os seguranças trocam olhares novamente, dessa vez um pouco mais desconfiados."
                     
-                    s "Sem um contato direto? Estranho..."
-                    s "Nós realmente não podemos liberar alguém assim tão facilmente sem verificarmos mais detalhes."
+                    se "Sem um contato direto? Estranho..."
+                    se "Nós realmente não podemos liberar alguém assim tão facilmente sem verificarmos mais detalhes."
                     
                     "O segurança digita mais algumas informações no computador."
                     
-                    s "Vamos precisar de mais tempo para confirmar a veracidade do seu convite. Pode demorar um pouco."
+                    se "Vamos precisar de mais tempo para confirmar a veracidade do seu convite. Pode demorar um pouco."
                     
                     a "{i}Isso vai atrasar tudo...{/i}"
                     
@@ -76,9 +80,13 @@ label sala_segurança:
                     
                     "Os minutos passam, e eventualmente os seguranças recebem uma confirmação da legitimidade do convite."
                     
-                    s "Certo, parece que tudo está em ordem. Pedimos desculpas pelo inconveniente."
+                    se "Certo, parece que tudo está em ordem. Pedimos desculpas pelo inconveniente."
                     
                     a "Tudo bem. Vou tentar aproveitar a festa agora."
+
+                    stop audio
+                    stop music
+                    stop sound
                     
                     jump sala_festa
 
@@ -87,21 +95,25 @@ label sala_segurança:
             
             "O segurança observa Anna por mais alguns instantes, tentando avaliar a sua expressão."
             
-            s "Aguarde aqui. Não deve demorar muito."
+            se "Aguarde aqui. Não deve demorar muito."
             
             "Os minutos se arrastam, com Anna sentada na cadeira desconfortável, observando os seguranças verificarem as informações."
             
             "Finalmente, após alguns minutos de silêncio, o segurança recebe uma ligação em seu rádio."
             
-            s "Entendido. Parece que tudo está confirmado."
+            se "Entendido. Parece que tudo está confirmado."
             
             "Ele se aproxima de Anna, devolvendo o convite."
             
-            s "Pedimos desculpas por qualquer inconveniente, senhorita. Pode prosseguir para a festa."
+            se "Pedimos desculpas por qualquer inconveniente, senhorita. Pode prosseguir para a festa."
             
             a "Obrigada. Sem problemas."
             
             "Os seguranças abrem a porta, permitindo que Anna siga seu caminho."
+
+            stop audio
+            stop music
+            stop sound
             
             jump sala_festa
 
@@ -110,20 +122,24 @@ label sala_segurança:
             
             "O segurança levanta uma sobrancelha, intrigado pela mudança de tom de Anna."
             
-            s "Senhorita, não queremos causar problemas. Apenas seguimos protocolos."
+            se "Senhorita, não queremos causar problemas. Apenas seguimos protocolos."
             
             a "Protocolos ou não, estou começando a achar que vocês estão tentando esconder algo!"
             
             "Os dois seguranças se olham, claramente incomodados com o tom de Anna."
             
-            s "Eu sugiro que a senhora tenha paciência e coopere. Caso contrário, a situação pode se complicar ainda mais."
+            se "Eu sugiro que a senhora tenha paciência e coopere. Caso contrário, a situação pode se complicar ainda mais."
             
             "Anna percebe que a atitude agressiva não está funcionando e opta por silenciar."
             
             "Depois de alguns minutos, os seguranças recebem uma confirmação."
             
-            s "Parece que sua história está correta, afinal. Pode ir."
+            se "Parece que sua história está correta, afinal. Pode ir."
             
             a "{i}Que perda de tempo.{/i}"
+
+            stop audio
+            stop music
+            stop sound
             
             jump sala_festa
