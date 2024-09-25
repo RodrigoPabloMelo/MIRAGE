@@ -20,7 +20,14 @@ default see_actions_after = False
 
 default falou_anthony = False
 default falou_veronica = False
+
+
 default falou_sophie = False
+default sophie_amigavel = False
+
+default falou_anthony_ato2 = False
+default falou_veronica_ato2 = False
+default falou_sophie_ato2 = False
 
 default use_new_name = False
 default new_name = "Anna"
