@@ -285,16 +285,16 @@ screen mapa():
         unhovered SetVariable("screen_tooltip", "")
         action Hide("mapa"), Jump("piscina")
 
-screen inventartio():
+screen inventario():
     add "bg_inventario.png"
     modal True
 
     vbox:
         pos 0.1, 0.25
         for item in inventario.items:
-            text "[item.name] - [item.description]\n" style "texto_inventario"
+            text "[item.name] - [item.description]\n"
 
-    imagebutton auto "inventario_botao_voltar_%s.png":
+    imagebutton auto "mapa_botao_voltar_%s.png":
         focus_mask True
         hovered SetVariable("screen_tooltip", "Voltar")
         unhovered SetVariable("screen_tooltip", "")
