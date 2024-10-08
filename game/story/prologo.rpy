@@ -184,6 +184,16 @@ label iniciar:
         "Anna olha o relógio: 10:50... "
         extend "Ela está {b}MUITO{/b} ferrada..."
 
+        a """
+        Ugh...
+
+        Eu deveria ter ligado para ele antes.
+
+        Não importa. Eu preciso correr.
+
+        Eu vou ter que resolver isso depois.
+        """
+
     else:
         a "É... "
         a "Vai ser uma viagem interessante."
