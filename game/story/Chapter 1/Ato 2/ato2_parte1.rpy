@@ -177,6 +177,8 @@ label falar_sophie_ato2:
             a "Sinto muito pelo que aconteceu. Você está bem?"
 
             "Ela não parece ouvir a pergunta, está absorta em seus próprios pensamentos."
+
+            jump escolha_salao_ato2
             
         "Ele era seu amigo não era?" if sophie_amigavel == True:
             a "Ele era seu amigo, não era? Deve estar sendo doloroso"

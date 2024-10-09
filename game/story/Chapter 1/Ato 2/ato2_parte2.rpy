@@ -47,6 +47,9 @@ label falar_veronica_ato2p2:
             $ veronica_confortada = False
 
             a "Por favor, eu só quero-"
+
+            show v at right
+            with vpunch
             
             v """
             Você é surda?
@@ -62,8 +65,59 @@ label falar_veronica_ato2p2:
             a "{i}Bom trabalho, Anna...{/i}"
             pass
         "Deixá-la sozinha":
+            a "Sinto muito..."
+
+            v "Só vá embora."
+
+            "Anna pensa em insistir, mas Verônica parece assustada com tudo."
+            "Talvez seja melhor deixá-la sozinha."
+
             pass
         "Confortar Verônica":
             $ veronica_confortada = True
             $ veronica_brava = False
+
+            """
+            Anna se move antes de pensar. Sem dizer uma palavra.
+
+            Ela gentilmente pressiona as mãos nos ombros de Verônica.
+
+            Verônica leva o lenço que estava segurando até o rosto e começa a chorar sutilmente.
+
+            Um choro silencioso...
+
+            Ela talvez não quisesse que ninguém visse, mas Anna estava ali.
+
+            E ela não estava sozinha.
+
+            Anna não sabia o que dizer, mas sabia que Verônica precisava de alguém.
+            """
+
+            v "Foi tudo tão rápido..."
+            v "Eu tentei acordar ele, mas a pele dele estava fria..."
+            v "pálido, sem vida..."
+
+            a "Ele estava bem ontem?"
+
+            v "Sim... "
+            extend "Ele não estavas doente, não parecia estar sofrendo de nada."
+
+            a "O que você estava passando pela sua cabeça?"
+
+            v "Eu... eu não sei."
+            v "Eu só queria que ele acordasse."
+
+            v "Eu nem queria estar aqui"
+            v "O meu..."
+            v "Marido... "
+            extend "ele se foi."
+
+            a "Eu sinto muito, Verônica."
+
+            v "Olha, eu... "
+            extend "gostaria de ficar sozinha."
+
+            a "Claro, estou aqui se precisar de algo."
             pass
+    
+    a "Eu preciso de mais informações se quiser saber o que {b}realmente{/b} aconteceu aqui."
