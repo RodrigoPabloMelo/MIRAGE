@@ -29,5 +29,10 @@ default falou_anthony_ato2 = False
 default falou_veronica_ato2 = False
 default falou_sophie_ato2 = False
 
+default all_actions_ato2 = False
+
+default veronica_brava = False
+default veronica_confortada = False
+
 default use_new_name = False
 default new_name = "Anna"
