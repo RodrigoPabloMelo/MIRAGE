@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/story/Chapter 1/Ato 2/investigar_quartos_ato2.rpy", line 30: choice menuitem expects a non-empty block.
+    "Investigar no quarto de Anna" if all_rooms == True or quarto_anthony == True:
+                                                                                  ^
+
+Ren'Py Version: Ren'Py 8.3.0.24082114
+Wed Oct  9 09:58:56 2024
